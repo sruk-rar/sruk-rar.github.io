@@ -138,7 +138,68 @@
     </div>
   </section>
 
-  <!-- Task 1 -->
+  <!-- Abstract -->
+  <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Image restoration aims to recover high quality images from inputs degraded by various factors, such as adverse weather, blur, or low light. While recent studies have shown remarkable progress across individual or unified restoration tasks, they still suffer from limited generalization and inefficiency when handling unknown or composite degradations. To address these limitations, we propose RAR, a Restore, Assess and Repeat process, that integrates Image Quality Assessment (IQA) and Image Restoration (IR) into a unified framework to iteratively and efficiently achieve high quality image restoration. Specifically, we introduce a restoration process that operates entirely in the latent domain to jointly perform degradation identification, image restoration, and quality verification. The resulting model is fully trainable end to end and allows for an all-in-one assess and restore approach that dynamically adapts the restoration process. Also, the tight integration of IQA and IR into a unified model minimizes the latency and information loss that typically arises from keeping the two modules disjoint, (e.g. during image and/or text decoding). Extensive experiments show that our approach consistent improvements under single, unknown and composite degradations, thereby establishing a new state-of-the-art.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Method -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="content has-text-justified">
+        <h2 class="title is-3 has-text-centered">Architecture of RAR</h2>
+        <div class="has-text-centered">
+          <div class="content has-text-justified">
+            <p>
+              RAR consists of two tightly integrated modules: 
+              <span class="tag is-light" style="background-color: #e7f6e7; color: #1e5e1e;"><b>Latent Quality Assessment (LQA)</b></span> and 
+              <span class="tag is-light" style="background-color: #f8e6da; color: #a25803;"><b>Unified Image Restoration (UIR)</b></span>.
+              By operating entirely in the shared latent space, RAR enables iterative degradation identification, restoration, and verification in a unified end-to-end framework.
+            </p>
+          </div>
+          <img style="width: 100%;" src="./rar_files/model.png"
+              alt="Overview of RAR."/>
+        </div>
+        <div class="columns is-multiline is-variable is-6">
+          <!-- LQA -->
+          <div class="column is-half">
+            <p class="content has-text-justified">
+              <span class="tag is-light" style="background-color: #e7f6e7; color: #1e5e1e;"><b>Latent Quality Assessment (LQA)</b></span>
+              projects degraded image latents into the IQA space via an image adapter, and aligns IQA outputs directly to restoration conditioning embeddings through a text adapter.
+              This removes lossy text decoding and enables end-to-end differentiable feedback between assessment and restoration.            
+            </p>
+          </div>
+
+          <!-- UIR -->
+          <div class="column is-half">
+            <p class="content has-text-justified">
+              <span class="tag is-light" style="background-color: #f8e6da; color: #a25803;"><b>Unified Image Restoration (UIR)</b></span>
+              is a flow-matching–based generative restoration backbone that directly maps degraded latents to high-quality latents.
+              Its noise-free formulation allows intermediate latent reassessment, enabling stable multi-round restoration.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          <em>
+            Together, LQA and UIR form a closed-loop latent feedback system that enables adaptive Restore–Assess–Repeat iterations with a adaptive stopping criterion.
+          </em>
+        </p>
+    </div>
+  </section>
+
+  <!-- Qualitative Results -->
   <section class="hero is-light">
     <div class="hero-body">
       <div class="container">
@@ -168,6 +229,19 @@
     </div>
   </section>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
