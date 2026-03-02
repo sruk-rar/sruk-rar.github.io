@@ -53,6 +53,7 @@
 
 <body>
 
+  <!-- Authors -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -138,12 +139,42 @@
     </div>
   </section>
 
+  <!-- Video -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; border-radius: 12px;">
+          <source src="./rar_files/Teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="methodname">RAR</span> is an iterative image restoration framework that unifies assessment and restoration in a shared latent space.
+        </h2>
+      </div>
+    </div>
+  </section> 
+
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video autoplay muted loop playsinline style="width: 100%; height: auto; border-radius: 12px;">
+          <source src="./rar_files/teaser.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <h2 class="subtitle has-text-centered">
+          <span class="methodname">RAR</span> is a unified latent-space framework that tightly integrates quality assessment and generative restoration for adaptive iterative image refinement under unknown degradations.
+        </h2>
+      </div>
+    </div>
+  </section> 
+
   <!-- Abstract -->
   <section class="section hero is-light">
       <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h3 class="title is-3">Abstract</h3>
+            <h4 class="title is-3">Abstract</h4>
             <div class="content has-text-justified">
               <p>
                 Image restoration aims to recover high quality images from inputs degraded by various factors, such as adverse weather, blur, or low light. While recent studies have shown remarkable progress across individual or unified restoration tasks, they still suffer from limited generalization and inefficiency when handling unknown or composite degradations. To address these limitations, we propose RAR, a Restore, Assess and Repeat process, that integrates Image Quality Assessment (IQA) and Image Restoration (IR) into a unified framework to iteratively and efficiently achieve high quality image restoration. Specifically, we introduce a restoration process that operates entirely in the latent domain to jointly perform degradation identification, image restoration, and quality verification. The resulting model is fully trainable end to end and allows for an all-in-one assess and restore approach that dynamically adapts the restoration process. Also, the tight integration of IQA and IR into a unified model minimizes the latency and information loss that typically arises from keeping the two modules disjoint, (e.g. during image and/or text decoding). Extensive experiments show that our approach consistent improvements under single, unknown and composite degradations, thereby establishing a new state-of-the-art.
@@ -158,7 +189,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <div class="content has-text-justified">
-        <h3 class="title is-3 has-text-centered">Architecture of RAR</h3>
+        <h4 class="title is-3 has-text-centered">Architecture of RAR</h4>
         <div class="has-text-centered">
           <div class="content has-text-justified">
             <p>
@@ -202,9 +233,9 @@
   <!-- Effectiveness of Proposed Modules -->
   <section class="hero is-light">
     <div class="hero-body">
-      <div class="container">
-        <h3 class="title is-3 has-text-centered">Effectiveness of Proposed Modules</h3>
-        <div id="ablation-carousel" class="carousel results-carousel">
+      <div class="container is-max-desktop">
+        <h4 class="title is-3 has-text-centered">Effectiveness of Proposed Modules</h4>
+        <div id="results-carousel" class="carousel results-carousel">
           <!-- Sample 1 -->
           <div class="item">
             <div>
@@ -249,8 +280,8 @@
   <!-- Qualitative Results -->
   <section class="section">
     <div class="hero-body">
-      <div class="container">
-        <h3 class="title is-3 has-text-centered">Qualitative Results</h3>
+      <div class="container is-max-desktop">
+        <h4 class="title is-3 has-text-centered">Qualitative Results</h4>
         <div class="content has-text-justified">
           <p>
             RAR performs restoration through iterative assess–restore steps. 
@@ -285,6 +316,23 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <hr/>
+  <section class="section" id="BibTeX">
+    <div class="container content is-max-desktop">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{chen2026robustvisragcausalityawarevisionbasedretrievalaugmented,
+        title={RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations}, 
+        author={I-Hsiang Chen and Yu-Wei Liu and Tse-Yu Wu and Yu-Chien Chiang and Jen-Chien Yang and Wei-Ting Chen},
+        year={2026},
+        eprint={2602.22013},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV},
+        url={https://arxiv.org/abs/2602.22013}, 
+      }
+      </code></pre>
     </div>
   </section>
 
